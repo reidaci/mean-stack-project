@@ -5,7 +5,7 @@ const mongoose = require("mongoose")
 const Post = require('./models/post')
 const app = express();
 
-mongoose.connect("mongodb+srv://reizAdmin:HvCIpdoJ23ENHwDl@cluster0.m9sdcm8.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://reizAdmin:HvCIpdoJ23ENHwDl@cluster0.m9sdcm8.mongodb.net/test?retryWrites=true&w=majority")
 .then(() => {
     console.log('Connected to db!');
 }).catch(() => {
@@ -33,29 +33,21 @@ app.post("/api/posts", (req, res, next) => {
     title: req.body.title,
     content:req.body.content
   });
-  console.log(post);
+  post.save()
   res.status(201).json({
     message: 'Post added successfully'
   });
 });
 
 app.get("/api/posts", (req, res, next) => {
-  const posts = [
-    {
-      id: "1",
-      title: "First server-side post",
-      content: "This is coming from the server"
-    },
-    {
-      id: "2",
-      title: "Second server-side post",
-      content: "This is coming from the server!"
-    }
-  ];
-  res.status(200).json({
-    message: "Posts fetched successfully!",
-    posts: posts
-  });
+  Post.find().then(documents => {
+    console.log(documents);
+    res.status(200).json({
+        message: "Posts fetched successfully!",
+        posts: documents
+      });
+  })
+
 });
 
 module.exports = app;
