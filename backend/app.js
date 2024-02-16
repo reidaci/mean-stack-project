@@ -30,12 +30,12 @@ app.post("/api/posts", (req, res, next) => {
 app.get("/api/posts", (req, res, next) => {
   const posts = [
     {
-      id: "fadf12421l",
+      id: "1",
       title: "First server-side post",
       content: "This is coming from the server"
     },
     {
-      id: "ksajflaj132",
+      id: "2",
       title: "Second server-side post",
       content: "This is coming from the server!"
     }
