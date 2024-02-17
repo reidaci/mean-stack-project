@@ -55,9 +55,9 @@ app.delete("/api/posts/:id", (req, res, next) => {
     res.status(200).json({message: 'Post Deleted'})
     console.log(result);
     console.log(req.params.id);
-  })
+  });
   
-})
+});
 
 
 module.exports = app;
