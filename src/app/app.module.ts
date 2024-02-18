@@ -13,6 +13,8 @@ import { PostListComponent } from './posts/post-create/post-list/post-list.compo
 import { MatExpansionModule } from '@angular/material/expansion';
 import { PostsService } from './posts/post-create/posts.service';
 import { HttpClientModule } from '@angular/common/http'
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http'
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [PostsService],
   bootstrap: [AppComponent]
