@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map } from "rxjs";
 import { response } from "express";
-
+import { Router } from "@angular/router"
 
 @Injectable({ providedIn: 'root' })
 export class PostsService {
@@ -12,7 +12,7 @@ export class PostsService {
     private postsUpdated = new Subject<Post[]>()
 
 
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private router: Router) { }
 
 
     getPosts() {
@@ -52,6 +52,7 @@ export class PostsService {
             console.log(responseData.message);
             this.posts.push(post)
             this.postsUpdated.next([...this.posts])
+            this.router.navigate(["/"])
         })
 
 
@@ -64,6 +65,7 @@ export class PostsService {
             updatedPosts[oldPostIndex] = post
             this.posts = updatedPosts
             this.postsUpdated.next([...this.posts])
+            this.router.navigate(["/"])
 
         })
     }

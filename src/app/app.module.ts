@@ -15,7 +15,7 @@ import { PostsService } from './posts/post-create/posts.service';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
     MatExpansionModule,
     HttpClientModule,
     RouterModule,
+    MatProgressSpinnerModule,
     AppRoutingModule
   ],
   providers: [PostsService],
