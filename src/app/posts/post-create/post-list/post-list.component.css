@@ -6,7 +6,9 @@
 mat-spinner {
   margin: auto;
 }
-
+mat-paginator { 
+  margin-top: 1rem;
+}
 .info-text {
   text-align: center;
 }
