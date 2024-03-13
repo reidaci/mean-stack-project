@@ -6,18 +6,20 @@
 mat-spinner {
   margin: auto;
 }
-mat-paginator { 
+
+mat-paginator {
   margin-top: 1rem;
 }
+
 .info-text {
   text-align: center;
 }
 
 .post-image {
-  width: 50%;
+  width: 100%;
 }
 
 .post-image img {
-  width: 50%;
+  width: 100%;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }

@@ -4,7 +4,7 @@ import { Observable, Observer, of } from "rxjs";
 export const mimeType = (
   control: AbstractControl
 ): Promise<{ [key: string]: any }> | Observable<{ [key: string]: any }> => {
-  if (typeof(control.value) === 'string') {
+  if (typeof (control.value) === 'string') {
     return of(null);
   }
   const file = control.value as File;
@@ -30,7 +30,7 @@ export const mimeType = (
             isValid = true;
             break;
           default:
-            isValid = false; // Or you can use the blob.type as fallback
+            isValid = false;
             break;
         }
         if (isValid) {

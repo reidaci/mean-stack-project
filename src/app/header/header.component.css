@@ -8,15 +8,11 @@ a {
   text-decoration: none;
   color: white;
 }
-ul { 
+
+ul {
   display: flex;
 }
+
 .spacer {
   flex: 1 1 auto;
 }
-
-.new {
-  
-background-color: #59B4C3;
-}
-
