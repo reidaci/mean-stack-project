@@ -18,5 +18,6 @@ export class LoginComponent {
     }
     this.isLoading = true;
     this.authService.login(form.value.email, form.value.password);
+    this.isLoading = false;
   }
 }
